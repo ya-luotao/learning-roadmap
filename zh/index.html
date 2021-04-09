@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" />
+        <style type="text/css">
+            #mynetwork,
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+            }
+            #key {
+                position: absolute;
+                right: 25px;
+                z-index: 1000000000;
+                top: 20px;
+                font-family: arial, sans-serif;
+                font-size: 18px;
+                text-align: center;
+                background: rgba(255, 255, 255, 0.7);
+                padding: 20px;
+            }
+            #primary {
+                border: solid 2px #9ecd54;
+                border-radius: 3px;
+                padding: 5px 7px;
+                color: black;
+                background-color: #e0f2c3;
+                margin-top: 10px;
+            }
+            #secondary {
+                border: solid 2px #00eaff;
+                border-radius: 3px;
+                padding: 5px;
+                color: black;
+                background-color: #b7f9ff;
+                margin-top: 10px;
+            }
+            #betaTag {
+                color: #fff;
+                font-family: Open Sans;
+                font-weight: 600;
+                background-color: #fd7219;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 100"><polygon points="70 0, 0 100, 70 100, 70 70" fill="rgba(230, 225, 215, 100)"/></svg>');
+                background-repeat: no-repeat;
+                background-position-x: right;
+                padding: 15px 25px;
+                margin: 15px 0px 0px 0px;
+                width: 75px;
+                position: absolute;
+                flex-wrap: nowrap;
+            }
+            #betaTag::after {
+                content: "BETA";
+                color: #fff;
+                font-family: Open Sans;
+                font-weight: 600;
+                font-size: 16px;
+                margin: 0px;
+                line-height: normal;
+            }
+            .visually-hidden {
+                clip: rect(0 0 0 0);
+                clip-path: inset(50%);
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+                white-space: nowrap;
+                width: 1px;
+            }
+            .table-of-contents {
+                max-width: 800px;
+                margin: auto;
+                padding: 50px;
+            }
+            .table-of-contents li {
+                line-height: 150%;
+            }
+        </style>
+        <title>开端开发者学习路线图 - Frontend Masters</title>
+        <meta name="description" content="Guides to learning the front-end web development industry tools and techniques, visualized as a roadmap." />
+        <meta property="og:image" content="https://frontendmasters.com/guides/learning-roadmap/og-learning-roadmap.jpg"/>
+        <meta property="og:title" content="The Front-End Developer Learning Roadmap by Frontend Masters"/>
+        <meta property="og:description" content="Guides to learning the front-end web development industry tools and techniques, visualized as a roadmap."/>
+        <meta property="og:image:width" content="600"/>
+        <meta property="og:image:height" content="441"/>
+    </head>
+    <body style="background-color: rgba(230, 225, 215, 100); margin: 0px">
+        <h1 class="visually-hidden">开端开发者学习路线图 - Frontend Masters</h1>
+        
+        <div id="betaTag"></div>
+
+        <div id="key">
+            <div>Key:</div>
+            <div id="primary">基础</div>
+            <div id="secondary">专业</div>
+        </div>
+        
+        <div id="mynetwork"></div>
+
+        <section class="table-of-contents">
+            <h2>前端学习路线图指南</h2>
+            <ul>
+                <li><a href='accessibility/' target='_blank'>Web 无障碍访问学习资源</a></li>
+                <li><a href='browser-webpage-performance/' target='_blank'>浏览器, 网站, and Web App Performance 学习资源</a></li>
+                <li><a href='code-editors/' target='_blank'>代码编辑器学习资源</a></li>
+                <li><a href='command-line-interface/' target='_blank'>Command Line Interface 学习资源</a></li>
+                <li><a href='css-fonts-and-icons/' target='_blank'>CSS Fonts & Icons 学习资源</a></li>
+                <li><a href='css-fundamentals/' target='_blank'>CSS Fundamentals 学习资源</a></li>
+                <li><a href='css-in-js/' target='_blank'>CSS in JavaScript (CSS-in-JS) 学习资源</a></li>
+                <li><a href='css-layout/' target='_blank'>CSS Layout 学习资源</a></li>
+                <li><a href='css-media-queries/' target='_blank'>CSS Media Queries 学习资源</a></li>
+                <li><a href='css-practices/' target='_blank'>CSS Best Practices 学习资源</a></li>
+                <li><a href='css-tooling/' target='_blank'>CSS Tooling 学习资源</a></li>
+                <li><a href='css-transitions-transforms-animations/' target='_blank'>CSS Transitions, Transforms, & Animations 学习资源</a></li>
+                <li><a href='css-ui-toolkits/' target='_blank'>CSS UI Toolkits 学习资源</a></li>
+                <li><a href='data-apis/' target='_blank'>Web Development Data APIs 学习资源</a></li>
+                <li><a href='desktop-apps/' target='_blank'>Desktop Application Development with Web Technologies 学习资源</a></li>
+                <li><a href='dom-bom-cssom/' target='_blank'>DOM, BOM, & CSSOM 学习资源</a></li>
+                <li><a href='front-end-developer-profession/' target='_blank'>The Front End Developer Profession 学习资源</a></li>
+                <li><a href='front-end-development-overview/' target='_blank'>Front End Development Technology Overview 学习资源</a></li>
+                <li><a href='getting-a-front-end-developer-job/' target='_blank'>Getting a Front End Developer Job 学习资源</a></li>
+                <li><a href='git/' target='_blank'>Git 学习资源</a></li>
+                <li><a href='html/' target='_blank'>HTML 学习资源</a></li>
+                <li><a href='html-email/' target='_blank'>HTML Email Development 学习资源</a></li>
+                <li><a href='http/' target='_blank'>HTTP 学习资源</a></li>
+                <li><a href='jam-stack/' target='_blank'>JAM Stack 学习资源</a></li>
+                <li><a href='javascript-fundamentals/' target='_blank'>JavaScript Fundamentals 学习资源</a></li>
+                <li><a href='javascript-modules-scripts/' target='_blank'>JavaScript Modules & Scripts 学习资源</a></li>
+                <li><a href='javascript-regular-expressions/' target='_blank'>JavaScript Regular Expressions 学习资源</a></li>
+                <li><a href='js-animation/' target='_blank'>JavaScript Animation 学习资源</a></li>
+                <li><a href='js-app-frameworks/' target='_blank'>JavaScript Application Frameworks/Libraries 学习资源</a></li>
+                <li><a href='js-async/' target='_blank'>JavaScript Asynchronous Programming 学习资源</a></li>
+                <li><a href='js-bundlers/' target='_blank'>JavaScript Bundlers 学习资源</a></li>
+                <li><a href='js-compile-to-js/' target='_blank'>JavaScript Compile to JS 学习资源</a></li>
+                <li><a href='js-cs/' target='_blank'>JavaScript & Computer Science 学习资源</a></li>
+                <li><a href='js-fp/' target='_blank'>JavaScript Functional Programming (FP) 学习资源</a></li>
+                <li><a href='js-oop/' target='_blank'>JavaScript Object-Oriented Programming (OOP) 学习资源</a></li>
+                <li><a href='js-performance/' target='_blank'>JavaScript Performance 学习资源</a></li>
+                <li><a href='js-practices-tools/' target='_blank'>JavaScript Practices & Tooling 学习资源</a></li>
+                <li><a href='js-runtime-ast/' target='_blank'>JavaScript Runtime & AST 学习资源</a></li>
+                <li><a href='js-state-management/' target='_blank'>JavaScript State Management 学习资源</a></li>
+                <li><a href='js-ui-components-and-widgets/' target='_blank'>JavaScript UI Components and Widgets 学习资源</a></li>
+                <li><a href='js-web-api/' target='_blank'>JavaScript Web Platform APIs 学习资源</a></li>
+                <li><a href='mobile-apps/' target='_blank'>Native Mobile Applications 学习资源</a></li>
+                <li><a href='node-npm/' target='_blank'>Node.js & npm / Yarn 学习资源</a></li>
+                <li><a href='npm-yarn-scripts/' target='_blank'>npm & yarn Scripts 学习资源</a></li>
+                <li><a href='pwa/' target='_blank'>Progressive Web Apps (PWAs) 学习资源</a></li>
+                <li><a href='rwd/' target='_blank'>Responsive Web Design 学习资源</a></li>
+                <li><a href='seo/' target='_blank'>Search Engine Optimization (SEO) 学习资源</a></li>
+                <li><a href='testing/' target='_blank'>JavaScript Unit and End-to-End Testing 学习资源</a></li>
+                <li><a href='the-web-platform/' target='_blank'>The Web Platform 学习资源</a></li>
+                <li><a href='ui-design-patterns/' target='_blank'>UI Design / Patterns 学习资源</a></li>
+                <li><a href='web-apps/' target='_blank'>Web Applications 学习资源</a></li>
+                <li><a href='web-images/' target='_blank'>Web Images 学习资源</a></li>
+                <li><a href='web-security/' target='_blank'>Web Security 学习资源</a></li>
+                <li><a href='webdev-tools/' target='_blank'>Web Developer Tools 学习资源</a></li>
+                <li><a href='www-basic-mechanics/' target='_blank'>World Wide Web (WWW) Basic Mechanics 学习资源</a></li>
+                <li><a href='x-compile-to-js/' target='_blank'>Compile to JavaScript Languages 学习资源</a></li>
+            </ul>
+        </section>
+
+        <script src="../node_modules/vis/dist/vis.min.js"></script>
+        <script type="text/javascript">
+            const createLabel = (labelContent) => {
+                let title = `<b>${labelContent.title}</b>\n\n <i>topics:</i> \n`;
+                let covers = '';
+                labelContent.covers.forEach((item, index) => {
+                    covers += `<code>${item}</code>`;
+                    covers += labelContent.covers.length === index + 1 ? '' : '\n';
+                });
+                return title + covers;
+            };
+
+            var nodes = [
+                {
+                    id: 0,
+                    color: {
+                        border: '#999',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#999',
+                            background: '#ffffff',
+                        },
+                    },
+                    margin: 30,
+                    font: {
+                        bold: '34px arial #000',
+                    },
+                    title: '立即阅读',
+                    label: '<b>前端开发者学习路线图</b> \n <code>Click roadmap for learning resources</code>',
+                    x: -700,
+                    y: -690,
+                },
+                {
+                    id: 1,
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    url: 'front-end-developer-profession/',
+                    label: createLabel({
+                        title: 'The Front-end Developer Profession',
+                        covers: [
+                            'Overview of Occupation',
+                            'Job Titles',
+                            'Compensation',
+                            'Required Skills',
+                            'Overlapping Occupations',
+                            'Occupational Challenges',
+                        ],
+                    }),
+                    x: -475,
+                    y: -500,
+                },
+                {
+                    id: 2,
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    url: 'getting-a-front-end-developer-job/',
+                    label: createLabel({
+                        title: 'Getting a Front-end Developer Job',
+                        covers: ['A Self Directed Education', 'A Directed Education', 'Building a Resume', 'Interviewing', 'Finding a Job', 'Communities'],
+                    }),
+                    x: -150,
+                    y: -630,
+                },
+                {
+                    id: 3,
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    url: 'front-end-development-overview/',
+                    label: createLabel({
+                        title: 'Front-end Tech/Spec Overview',
+                        covers: [
+                            'The World Wide Web (aka WWW)',
+                            'The Internet',
+                            'The Web Platform',
+                            'HTTP',
+                            'URL',
+                            'HTML',
+                            'CSS',
+                            'JavaScript & DOM',
+                            'JSON',
+                            'Web APIs',
+                            'Web Accessibility',
+                        ],
+                    }),
+                    x: 250,
+                    y: -500,
+                },
+                {
+                    id: 4,
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    url: 'www-basic-mechanics/',
+                    label: createLabel({
+                        title: 'The WWW Basic Mechanics',
+                        covers: ['Internet', 'TCP / IP / DNS', 'HTTP', "URL's / Domains / Sub-Domains", 'Web Hosting', 'Domain Registrars'],
+                    }),
+                    x: -150,
+                    y: -370,
+                },
+                {
+                    id: 5,
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    url: 'http/',
+                    label: createLabel({
+                        title: 'HTTP & Web Sockets',
+                        covers: ['HTTP', 'Web Sockets'],
+                    }),
+                    x: -150,
+                    y: -200,
+                },
+                {
+                    id: 6,
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    url: 'the-web-platform/',
+                    label: createLabel({
+                        title: 'The Web Platform',
+                        covers: ['Web Platform APIs', 'Web Runtimes', 'Web To Native', 'Developing for Browsers'],
+                    }),
+                    x: 80,
+                    y: -250,
+                },
+                {
+                    id: 7,
+                    url: 'web-security/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Web Security',
+                        covers: ['学习资源', 'Tools'],
+                    }),
+                    x: 550,
+                    y: 1075,
+                },
+                {
+                    id: 8,
+                    url: 'code-editors/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Code Editors',
+                        covers: ['Visual Studio Code', 'Online Editors', '学习资源'],
+                    }),
+                    x: 300,
+                    y: -220,
+                },
+                {
+                    id: 9,
+                    url: 'html/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'HTML',
+                        covers: ['HTML Elements', 'HTML Semantics', 'Web pages'],
+                    }),
+                    x: 550,
+                    y: -220,
+                },
+                {
+                    id: 10,
+                    url: 'seo/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Search Engine Optimization (aka SEO)',
+                        covers: ['学习资源', 'Tools'],
+                    }),
+                    x: 600,
+                    y: -400,
+                },
+                {
+                    id: 11,
+                    url: 'web-images/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Web Image Fundamentals',
+                        covers: ['Image Formats', '<img/>'],
+                    }),
+                    x: 850,
+                    y: -20,
+                },
+                {
+                    id: 12,
+                    url: 'accessibility/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Accessibility',
+                        covers: ['学习资源', 'Tools'],
+                    }),
+                    x: 850,
+                    y: 200,
+                },
+                {
+                    id: 13,
+                    url: 'css-fundamentals/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Fundamentals',
+                        covers: ['Inheritance & Cascade', 'Specificity', 'Selectors', 'Box Model', 'Colors & Gradients', 'Units'],
+                    }),
+                    x: 600,
+                    y: -30,
+                },
+                {
+                    id: 14,
+                    url: 'css-fonts-and-icons/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Fonts',
+                        covers: ['Web fonts', 'CSS Icons', 'Google Fonts'],
+                    }),
+                    x: 345,
+                    y: -30,
+                },
+                {
+                    id: 15,
+                    url: 'css-layout/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Layout',
+                        covers: ['Flow', 'Positioning', 'Floats', 'Flexbox', 'Grids'],
+                    }),
+                    x: 100,
+                    y: -30,
+                },
+                {
+                    id: 16,
+                    url: 'css-media-queries/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Media Queries',
+                        covers: ['Print v.s. Screen', 'Devices specific CSS', 'Screen Sizes'],
+                    }),
+                    x: -150,
+                    y: -30,
+                },
+                {
+                    id: 17,
+                    url: 'css-transitions-transforms-animations/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Transitions, Transforms & Animation',
+                        covers: ['HTML & CSS Animations', 'JavaScript-less Animations'],
+                    }),
+                    x: -450,
+                    y: 50,
+                },
+                {
+                    id: 18,
+                    url: 'html-email/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'HTML Emails',
+                        covers: ['Boilerplates', 'tools'],
+                    }),
+                    x: -350,
+                    y: -250,
+                },
+                {
+                    id: 19,
+                    url: 'css-practices/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Practices',
+                        covers: ['Architecture', 'Conventions', 'Resets'],
+                    }),
+                    x: -550,
+                    y: -150,
+                },
+                {
+                    id: 20,
+                    url: 'ui-design-patterns/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'UI Design / Patterns',
+                        covers: ['Interaction Design', 'HCI', 'UI Patterns'],
+                    }),
+                    x: -550,
+                    y: -330,
+                },
+                {
+                    id: 21,
+                    url: 'javascript-fundamentals/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Fundamentals',
+                        covers: ['Syntax', 'Variables / Assignment', 'Values', 'Operators', 'Functions', 'Statements', 'Objects', 'Scope & Closure'],
+                    }),
+                    x: -800,
+                    y: -330,
+                },
+                {
+                    id: 22,
+                    url: 'javascript-regular-expressions/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Regular Expressions',
+                        covers: ['Pattern Matching', 'Searching Strings'],
+                    }),
+                    x: -1100,
+                    y: -200,
+                },
+                {
+                    id: 23,
+                    url: 'javascript-modules-scripts/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript/ES Modules & Scripts',
+                        covers: ['<script>', 'import', 'export'],
+                    }),
+                    x: -800,
+                    y: -70,
+                },
+                {
+                    id: 24,
+                    url: 'command-line-interface/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Command Line Interface',
+                        covers: ['Bash', 'Terminal'],
+                    }),
+                    x: -980,
+                    y: 100,
+                },
+                {
+                    id: 25,
+                    url: 'git/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'GIT',
+                        covers: ['Github', 'Graphical Clients'],
+                    }),
+                    x: -700,
+                    y: 100,
+                },
+                {
+                    id: 26,
+                    url: 'node-npm/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Node.js & NPM Registry',
+                        covers: ['Node', 'NPM CLI', 'Yarn CLI', 'Semantic Versioning'],
+                    }),
+                    x: -950,
+                    y: 260,
+                },
+                {
+                    id: 27,
+                    url: 'npm-yarn-scripts/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'NPM/Yarn Scripts',
+                        covers: ['NPM Scripts/Run', 'Yarn Scripts/Run', 'Building', 'Tasking'],
+                    }),
+                    x: -650,
+                    y: 270,
+                },
+                {
+                    id: 28,
+                    url: 'css-tooling/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS Tooling',
+                        covers: ['Pre Processors', 'Post Processors', 'Linting/Hinting', 'Minifier', 'Formatter (e.g., prettier)'],
+                    }),
+                    x: -650,
+                    y: 550,
+                },
+                {
+                    id: 29,
+                    url: 'css-ui-toolkits/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS UI Toolkits',
+                        covers: ['Utility Toolkits', 'UI Toolkits'],
+                    }),
+                    x: -400,
+                    y: 450,
+                },
+                {
+                    id: 30,
+                    url: 'dom-bom-cssom/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'DOM, BOM, CSSOM',
+                        covers: ['Behavior', 'Programming Browsers, HTML, & CSS', 'Touch, Mouse, & Pointer Events'],
+                    }),
+                    x: -420,
+                    y: 250,
+                },
+                {
+                    id: 31,
+                    url: 'js-oop/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Object-Oriented Programming (OOP)',
+                        covers: ['Classes', 'Constructors', 'Inheritance', 'Methods'],
+                    }),
+                    x: -50,
+                    y: 150,
+                },
+                {
+                    id: 32,
+                    url: 'js-async/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Asynchronous Programming',
+                        covers: ['Single Threaded', 'Event Loop', 'Concurrency', 'Callbacks'],
+                    }),
+                    x: -150,
+                    y: 350,
+                },
+                {
+                    id: 33,
+                    url: 'js-fp/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Functional Programming (FP)',
+                        covers: ['Purity', 'Pure Functions', 'Immutability', 'First-Class Functions', 'Composition'],
+                    }),
+                    x: -150,
+                    y: 550,
+                },
+                {
+                    id: 34,
+                    url: 'js-web-api/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Web/Browser APIs',
+                        covers: ['Device APIs', 'Communication APIs', 'Data Management APIs'],
+                    }),
+                    x: 120,
+                    y: 400,
+                },
+                {
+                    id: 35,
+                    url: 'js-practices-tools/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Practices & Tooling',
+                        covers: ['Conventions', 'Utilities', 'Linting/Hinting (e.g., eslint)', 'Minifier', 'Formatting (e.g., prettier)'],
+                    }),
+                    x: 280,
+                    y: 180,
+                },
+                {
+                    id: 36,
+                    url: 'js-ui-components-and-widgets/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript UI Components and Widgets',
+                        covers: ['Design Systems', 'Toolkits'],
+                    }),
+                    x: -150,
+                    y: 1300,
+                },
+                {
+                    id: 37,
+                    url: 'js-runtime-ast/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Runtimes & AST',
+                        covers: ['Chrome V8', 'SpiderMonkey', 'SquirrelFish'],
+                    }),
+                    x: 600,
+                    y: 160,
+                },
+                {
+                    id: 38,
+                    url: 'js-performance/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Performance',
+                        covers: ['benchmarks'],
+                    }),
+                    x: 600,
+                    y: 360,
+                },
+                {
+                    id: 39,
+                    url: 'js-cs/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript & Computer Science',
+                        covers: ['Algorithms', 'Data Structures', 'Tree', 'Graph Data'],
+                    }),
+                    x: 600,
+                    y: 550,
+                },
+                {
+                    id: 40,
+                    url: 'js-animation/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Animation',
+                        covers: ['animate()', 'Animation API', 'AnimationEvent API', 'AnimationEffect API'],
+                    }),
+                    x: 600,
+                    y: 750,
+                },
+                {
+                    id: 41,
+                    url: 'webdev-tools/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Web Developer Tools',
+                        covers: ['Chrome Dev Tools'],
+                    }),
+                    x: 250,
+                    y: 600,
+                },
+                {
+                    id: 42,
+                    url: 'mobile-apps/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Native Mobile Apps (from Web Tech)',
+                        covers: ['React Native', 'NativeScript', 'Flutter'],
+                    }),
+                    x: 600,
+                    y: 920,
+                },
+
+                {
+                    id: 43,
+                    url: 'desktop-apps/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Native Desktop Apps (from Web Tech)',
+                        covers: ['Electron', 'Flutter', 'NW.js'],
+                    }),
+                    x: 275,
+                    y: 870,
+                },
+                {
+                    id: 44,
+                    url: 'pwa/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Progressive Web Apps',
+                        covers: ['Responsive', 'Installable', 'Offline', 'accessible'],
+                    }),
+                    x: 0,
+                    y: 900,
+                },
+                {
+                    id: 45,
+                    url: 'rwd/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Responsive Web Design',
+                        covers: ['Responsive Images', 'Responsive Type', 'Responsive Layout'],
+                    }),
+                    x: -250,
+                    y: 870,
+                },
+                {
+                    id: 46,
+                    url: 'jam-stack/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JAM Stack',
+                        covers: ['Static assets', 'CDN', 'APIs', 'Markdown'],
+                    }),
+                    x: -500,
+                    y: 850,
+                },
+                {
+                    id: 58,
+                    url: 'web-apps/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Web Apps',
+                        covers: ['React/JSX', 'Vue', 'Svelte', 'Angular'],
+                    }),
+                    x: -650,
+                    y: 950,
+                },
+                {
+                    id: 47,
+                    url: 'js-bundlers/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Bundlers',
+                        covers: ['Webpack', 'Parcel', 'Rollup', 'esbuild'],
+                    }),
+                    x: -50,
+                    y: 720,
+                },
+                {
+                    id: 48,
+                    url: 'x-compile-to-js/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'X Compile to JS',
+                        covers: ['Reason', 'Elm', 'ClojureScript', 'PureScript', 'TypeScript'],
+                    }),
+                    x: -390,
+                    y: 630,
+                },
+                {
+                    id: 49,
+                    url: 'js-compile-to-js/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JS Compile to JS',
+                        covers: ['Babel', 'Typescript', 'scw', 'sucrase'],
+                    }),
+                    x: -750,
+                    y: 780,
+                },
+                {
+                    id: 50,
+                    url: 'js-app-frameworks/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'JavaScript Web Application Frameworks/Libraries',
+                        covers: ['React/JSX', 'Vue', 'Svelte', 'Angular'],
+                    }),
+                    x: -860,
+                    y: 1150,
+                },
+                {
+                    id: 51,
+                    url: 'js-state-management/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: ' JavaScript State Management',
+                        covers: ['Mobx', 'Redux'],
+                    }),
+                    x: -300,
+                    y: 1100,
+                },
+                {
+                    id: 53,
+                    url: 'data-apis/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Data APIs & Data Formats',
+                        covers: ['REST', 'GraphQL', 'JSON'],
+                    }),
+                    x: 0,
+                    y: 1100,
+                },
+                {
+                    id: 55,
+                    url: 'testing/',
+                    color: {
+                        border: '#9ecd54',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#9ecd54',
+                            background: '#e0f2c3',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Testing',
+                        covers: ['Unit', 'Integration', 'End to End Testing'],
+                    }),
+                    x: 300,
+                    y: 1100,
+                },
+                {
+                    id: 56,
+                    url: 'browser-webpage-performance/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'Browser/Website/App Performance',
+                        covers: ['Website Performance', 'Load Performance', 'Rendering Performance'],
+                    }),
+                    x: -1000,
+                    y: 940,
+                },
+                {
+                    id: 57,
+                    url: 'css-in-js/',
+                    color: {
+                        border: '#00eaff',
+                        background: '#ffffff',
+                        hover: {
+                            border: '#00eaff',
+                            background: '#b7f9ff',
+                        },
+                    },
+                    title: '立即阅读',
+                    label: createLabel({
+                        title: 'CSS in JS',
+                        covers: ['Styled Components', 'JSS', 'Emotion'],
+                    }),
+                    x: -550,
+                    y: 1200,
+                },
+            ];
+
+            var edges = [
+                { from: 0, to: 1, arrows: 'to' },
+                { from: 1, to: 3, arrows: 'to' },
+                { from: 2, to: 3, arrows: 'to' },
+                { from: 3, to: 4, arrows: 'to' },
+                { from: 1, to: 2, arrows: 'to' },
+                { from: 4, to: 5, arrows: 'to' },
+                { from: 5, to: 6, arrows: 'to' },
+
+                { from: 6, to: 8, arrows: 'to' },
+                { from: 55, to: 7, arrows: 'to' },
+
+                { from: 8, to: 9, arrows: 'to' },
+                { from: 9, to: 10, arrows: 'to' },
+                { from: 9, to: 11, arrows: 'to' },
+                { from: 10, to: 11, arrows: 'to' },
+                { from: 11, to: 12, arrows: 'to' },
+                { from: 11, to: 13, arrows: 'to' },
+                { from: 12, to: 13, arrows: 'to' },
+                { from: 13, to: 14, arrows: 'to' },
+                { from: 15, to: 16, arrows: 'to' },
+                { from: 15, to: 16, arrows: 'to' },
+                { from: 14, to: 15, arrows: 'to' },
+
+                { from: 16, to: 17, arrows: 'to' },
+                { from: 17, to: 18, arrows: 'to' },
+                { from: 18, to: 19, arrows: 'to' },
+                { from: 17, to: 19, arrows: 'to' },
+                { from: 19, to: 20, arrows: 'to' },
+                { from: 19, to: 21, arrows: 'to' },
+                { from: 20, to: 21, arrows: 'to' },
+                { from: 21, to: 22, arrows: 'to' },
+                { from: 21, to: 23, arrows: 'to' },
+                { from: 22, to: 23, arrows: 'to' },
+                { from: 23, to: 24, arrows: 'to' },
+
+                { from: 24, to: 25, arrows: 'to' },
+                { from: 25, to: 26, arrows: 'to' },
+
+                { from: 26, to: 28, arrows: 'to' },
+                { from: 26, to: 27, arrows: 'to' },
+                { from: 27, to: 28, arrows: 'to' },
+                { from: 28, to: 29, arrows: 'to' },
+                { from: 28, to: 30, arrows: 'to' },
+                { from: 29, to: 30, arrows: 'to' },
+                { from: 30, to: 31, arrows: 'to' },
+                { from: 31, to: 32, arrows: 'to' },
+                { from: 32, to: 33, arrows: 'to' },
+                { from: 33, to: 34, arrows: 'to' },
+
+                { from: 34, to: 35, arrows: 'to' },
+                { from: 35, to: 37, arrows: 'to' },
+                { from: 35, to: 38, arrows: 'to' },
+                { from: 35, to: 39, arrows: 'to' },
+                { from: 35, to: 40, arrows: 'to' },
+                { from: 35, to: 41, arrows: 'to' },
+
+                { from: 37, to: 38, arrows: 'to, from' },
+                { from: 38, to: 39, arrows: 'to, from' },
+                { from: 39, to: 40, arrows: 'to, from' },
+                { from: 40, to: 41, arrows: 'to' },
+
+                { from: 37, to: 41, arrows: 'to, from' },
+                { from: 38, to: 41, arrows: 'to, from' },
+                { from: 39, to: 41, arrows: 'to, from' },
+                { from: 40, to: 41, arrows: 'to, from' },
+
+                { from: 41, to: 47, arrows: 'to' },
+                { from: 47, to: 48, arrows: 'to' },
+                { from: 48, to: 49, arrows: 'to' },
+                { from: 47, to: 49, arrows: 'to' },
+
+                { from: 42, to: 43, arrows: 'to, from' },
+                { from: 43, to: 44, arrows: 'to, from' },
+                { from: 44, to: 45, arrows: 'to, from' },
+                { from: 45, to: 46, arrows: 'to, from' },
+
+                { from: 49, to: 50, arrows: 'to' },
+
+                { from: 50, to: 58, arrows: 'to' },
+
+                { from: 42, to: 55, arrows: 'to, from' },
+                { from: 43, to: 55, arrows: 'to, from' },
+                { from: 44, to: 55, arrows: 'to, from' },
+                { from: 45, to: 55, arrows: 'to, from' },
+                { from: 46, to: 55, arrows: 'to, from' },
+
+                { from: 53, to: 42, arrows: 'to' },
+                { from: 53, to: 43, arrows: 'to' },
+                { from: 53, to: 44, arrows: 'to' },
+                { from: 53, to: 45, arrows: 'to' },
+                { from: 53, to: 46, arrows: 'to' },
+
+                { from: 58, to: 51, arrows: 'to' },
+
+                { from: 51, to: 53, arrows: 'to' },
+
+                { from: 55, to: 54, arrows: 'to' },
+                { from: 49, to: 56, arrows: 'to' },
+                { from: 56, to: 50, arrows: 'to' },
+
+                { from: 51, to: 36, arrows: 'to' },
+                { from: 36, to: 53, arrows: 'to' },
+                { from: 58, to: 57, arrows: 'to' },
+                { from: 57, to: 51, arrows: 'to' },
+            ];
+
+            var container = document.getElementById('mynetwork');
+
+            var data = {
+                nodes: nodes,
+                edges: edges,
+            };
+
+            var options = {
+                interaction: {
+                    hover: true,
+                    dragNodes: false,
+                    dragView: true,
+                },
+                edges: {
+                    font: {
+                        size: 12,
+                    },
+                },
+                nodes: {
+                    shape: 'box',
+                    color: {
+                        border: '#4d4d4d',
+                        background: '#ededed',
+                        hover: {
+                            border: '#4d4d4d',
+                            background: '#fff',
+                        },
+                    },
+                    shapeProperties: {
+                        borderRadius: 3,
+                    },
+                    font: {
+                        multi: true,
+                        bold: '12px arial #262626',
+                        mono: '11px arial #4d4d4d',
+                        ital: '11px arial #999',
+                    },
+                    widthConstraint: {
+                        maximum: 300,
+                    },
+                    margin: 16,
+                },
+                physics: {
+                    enabled: false,
+                },
+            };
+
+            var network = new vis.Network(container, data, options);
+
+            //Get the canvas HTML element
+            var networkCanvas = container.getElementsByTagName('canvas')[0];
+
+            function changeCursor(newCursorStyle) {
+                networkCanvas.style.cursor = newCursorStyle;
+            }
+
+            var isCmdControlPressed = false;
+
+            document.addEventListener('keydown', function (e) {
+                isCmdControlPressed = e.ctrlKey || e.metaKey;
+            });
+
+            document.addEventListener('keyup', function (e) {
+                isCmdControlPressed = e.ctrlKey || e.metaKey;
+            });
+
+            network.on('click', (params) => {
+                const node = nodes.find((node) => {
+                    return node.id === params.nodes[0];
+                });
+
+                if (node === undefined) {
+                    return;
+                }
+
+                if (isCmdControlPressed) {
+                    window.open(node.url, '_blank');
+                } else {
+                    window.open(node.url, '_self');
+                }
+            });
+
+            network.on('hoverNode', function (params) {
+                changeCursor('pointer');
+            });
+
+            network.on('blurNode', function (e) {
+                changeCursor('default');
+            });
+            network.on('dragStart', function (e) {
+                changeCursor('grabbing');
+            });
+            network.on('dragging', function (e) {
+                changeCursor('grabbing');
+            });
+            network.on('dragEnd', function (e) {
+                changeCursor('pointer');
+            });
+        </script>
+    </body>
+</html>
